@@ -63,25 +63,25 @@ input[type=submit] {
 
          <tr><td>
                <label for="Userid">Id:</label></td><td>
-               <input type="text" name="bid" id="bid" value=<?php echo $_REQUEST["bid"];  ?> >
+               <input type="text" name="pid" id="pid" value=<?php echo $_REQUEST["bid"];  ?> >
                </td></tr>      
              
             <tr><td>
                <label for="dname">Name:</label></td><td>
-               <input type="text" name="bname" id="bname" value='<?php  echo $_REQUEST["name"];  ?>'>
+               <input type="text" name="pname" id="pname" value='<?php  echo $_REQUEST["name"];  ?>'>
                </td></tr>
 
         
              
             <tr><td>
                <label for="email">Email Address:</label></td><td>
-               <input type="text" name="email" id="email" value=<?php echo $_REQUEST["email"];  ?>>
+               <input type="text" name="price" id="price" value=<?php echo $_REQUEST["email"];  ?>>
                </td></tr>
 
 
                <tr><td>
                <label for="addres">Address:</label></td><td>
-               <input type="text" name="address" id="address" value=<?php echo $_REQUEST["address"];  ?>>
+               <input type="text" name="desc" id="desc" value=<?php echo $_REQUEST["address"];  ?>>
                </td></tr>
                
             <input type="submit" value="Submit">

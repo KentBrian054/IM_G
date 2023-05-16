@@ -1,5 +1,5 @@
 <?php
-     $conn = mysqli_connect("localhost", "root", "", "people");
+     $conn = mysqli_connect("localhost", "root", "", "im_store");
          
      // Check connection
      if($conn === false){
@@ -12,7 +12,7 @@
      $email = $_REQUEST['price'];
      $address =  $_REQUEST['desc'];
 
-$sql = "UPDATE product SET prod_id=$bid, prod_name='$bname', prod_price='$address',prod_desc='$email'  WHERE id=$bid";
+$sql = "UPDATE product SET prod_id=$bid, prod_name='$bname', prod_price='$address',prod_desc='$email'  WHERE prod_id=$bid";
   
 if ($conn->query($sql) === TRUE) {
   echo "Record updated successfully";
@@ -21,5 +21,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-//header("Location:index.php");
+header("Location:index.php");
 ?>
