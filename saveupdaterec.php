@@ -13,7 +13,7 @@
      $email = $_REQUEST['price'];
      $address =  $_REQUEST['desc'];
 //database
-$sql = "UPDATE product SET prod_id=$bid, prod_name='$bname', prod_price='$address',prod_desc='$email'  WHERE prod_id=$bid";
+$sql = "UPDATE product SET prod_id=$bid, prod_name='$bname', prod_price='$email',prod_desc='$address'  WHERE prod_id=$bid";
   
 if ($conn->query($sql) === TRUE) {
   echo "Record updated successfully";
