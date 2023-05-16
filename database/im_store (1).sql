@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 09:10 AM
+-- Generation Time: May 16, 2023 at 09:51 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -52,22 +52,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`prod_id`, `prod_name`, `prod_price`, `prod_desc`) VALUES
-(5, 'fish food', 1000, 'aquarium'),
 (6, 'bird cage semi square', 349, 'Bird cage'),
 (7, 'Dog pad', 400, 'Dog Diaper'),
 (12, 'cookie', 250, 'dog'),
 (99, 'green metal hamster wheel', 149, 'hamster wheel');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sales`
---
-
-CREATE TABLE `sales` (
-  `sale_id` int(11) NOT NULL,
-  `tran_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -98,13 +86,6 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`prod_id`);
 
 --
--- Indexes for table `sales`
---
-ALTER TABLE `sales`
-  ADD PRIMARY KEY (`sale_id`),
-  ADD KEY `tran_id` (`tran_id`);
-
---
 -- Indexes for table `transactions`
 --
 ALTER TABLE `transactions`
@@ -120,12 +101,6 @@ ALTER TABLE `transactions`
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `product` (`prod_id`),
   ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`tran_id`) REFERENCES `transactions` (`tran_id`);
-
---
--- Constraints for table `sales`
---
-ALTER TABLE `sales`
-  ADD CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`tran_id`) REFERENCES `transactions` (`tran_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
