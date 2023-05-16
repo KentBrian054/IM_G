@@ -16,7 +16,7 @@
 
 
 // sql to delete a record
-$sql = "DELETE FROM product WHERE id=". $_REQUEST["id"];
+$sql = "DELETE FROM product WHERE prod_id=". $_REQUEST["bid"];
 
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";

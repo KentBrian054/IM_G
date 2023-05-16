@@ -57,7 +57,7 @@ input[type=submit] {
    <body>
       <center>
 
-         <h1>Storing Form Data in Database</h1>
+         <h1>Nilda Sari-sari Store</h1>
          <table>
          <form action="insertrec.php" method="post">
 

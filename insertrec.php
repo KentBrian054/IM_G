@@ -38,7 +38,7 @@
  
 
         } else{
-           echo "ERROR: Hush! Sorry $sql. "
+           echo "ERROR:  Sorry please try again$sql. "
                 . mysqli_error($conn);
 
         }
