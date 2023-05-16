@@ -8,6 +8,9 @@
 <body>
     <center>
         <?php
+
+        //connects from index
+        
  
         // servername => localhost
         // username => root
@@ -28,6 +31,8 @@
         $address =  $_REQUEST['desc'];
         // Performing insert query execution
         // here our table name is college
+
+        //database
         $sql = "INSERT INTO product VALUES ($bid,
             '$bname',$email,'$address')";
          

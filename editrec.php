@@ -57,7 +57,7 @@ input[type=submit] {
 
    <body>
       <center>
-         <h1>Storing Form data in Database</h1>
+         <h1>Updating Data in Database</h1>
          <table>
          <form action="saveupdaterec.php" method="post">
 

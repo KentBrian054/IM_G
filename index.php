@@ -97,7 +97,7 @@ input[type=submit] {
      die("ERROR: Could not connect. "
          . mysqli_connect_error());
  }
-  
+  //database
  $sql = "SELECT * FROM product";
  $result = $conn->query($sql);
  

@@ -1,4 +1,5 @@
 <?php
+//saving data to database
      $conn = mysqli_connect("localhost", "root", "", "im_store");
          
      // Check connection
@@ -11,7 +12,7 @@
      $bname = $_REQUEST['pname'];
      $email = $_REQUEST['price'];
      $address =  $_REQUEST['desc'];
-
+//database
 $sql = "UPDATE product SET prod_id=$bid, prod_name='$bname', prod_price='$address',prod_desc='$email'  WHERE prod_id=$bid";
   
 if ($conn->query($sql) === TRUE) {
