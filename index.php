@@ -23,7 +23,8 @@
  // username => root
  // password => empty
  // database name => staff
- $conn = mysqli_connect("localhost", "root", "", "im_store");
+ //$conn = mysqli_connect("localhost", "root", "", "im_store");
+ include_once 'config.php';
   
  // Check connection
  if($conn === false){

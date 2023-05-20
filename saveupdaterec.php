@@ -1,6 +1,7 @@
 <?php
 //saving data to database
-     $conn = mysqli_connect("localhost", "root", "", "im_store");
+     //$conn = mysqli_connect("localhost", "root", "", "im_store");
+     include_once 'config.php';
          
      // Check connection
      if($conn === false){
