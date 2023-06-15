@@ -21,8 +21,6 @@
     // Taking all 5 values from the form data(input)
     $CatID =  $_REQUEST['CategoryID'];
     $CatName = $_REQUEST['CategoryDesc'];
-    // Performing insert query execution
-    // here our table name is college
     //database
     $sql = "INSERT INTO category VALUES ($CatID,'$CatName')";
     if(mysqli_query($conn, $sql)){
