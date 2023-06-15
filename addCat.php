@@ -19,14 +19,12 @@
         die("ERROR: Could not connect. ". mysqli_connect_error());
     }
     // Taking all 5 values from the form data(input)
-    $bid =  $_REQUEST['pid'];
-    $bname = $_REQUEST['pname'];
-    $email = $_REQUEST['price'];
-    $address =  $_REQUEST['desc'];
+    $CatID =  $_REQUEST['CategoryID'];
+    $CatName = $_REQUEST['CategoryDesc'];
     // Performing insert query execution
     // here our table name is college
     //database
-    $sql = "INSERT INTO product VALUES ($bid,'$bname',$email,'$address')";
+    $sql = "INSERT INTO category VALUES ($CatID,'$CatName')";
     if(mysqli_query($conn, $sql)){
         echo "<h3>data stored in a database successfully.". " Please browse your localhost php my admin". " to view the updated data</h3>";
     } else{
