@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form action="save.php" method="POST">
+    <form action="addCat.php" method="POST">
         <input type="text" id="CategoryID" name="CategoryID" placeholder="Product Category ID"><br>
         <input type="text" id="CategoryDesc" name="CategoryDesc" placeholder="Product Category Description"><br>
         <input type="submit" value="Save">
