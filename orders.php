@@ -10,7 +10,7 @@
 <body>
     <form action="addorder.php" method="POST">
         <input type="text" id="ProdID" name="ProdID" placeholder="Product ID"><br>
-        <input type="text" id="TranID" name="TranID" placeholder="Transaction ID"><br>
+        <input type="text" id="TranID"  name="TranID" placeholder="Transaction ID"><br>
         <input type="text" id="ItemQTY" name="ItemQTY" placeholder="Item Quantity"><br>
         <input type="submit" value="Save">
     </form>
@@ -29,26 +29,32 @@
          . mysqli_connect_error());
  }
   //database
- $sql = "SELECT * FROM product";
+ $sql = "SELECT * FROM product WHERE prod_id = 6";
  $result = $conn->query($sql);
+ 
  
  if ($result->num_rows > 0) {
    // output data of each row
    echo "<table id='myTable' border=2>
    <tr>
-   <td>Category Id</td>
-   <td>Category Description</td>
+   <td>Transaction Id</td>
+   <td>Product Id</td>
+   <td>Item Quantity</td>
    </tr>";
    while($row = $result->fetch_assoc()) {
      echo "<tr><td>" . $row["prod_id"]. "</td>
+     <td>" . $row["prod_id"]. "</td>
      <td>" . $row["prod_name"]. "</td>
      </tr>";
    
     }
  } else {
-   echo "0 results";
+   echo "No Records Made";
  }
- $conn->close();
+
+
+?>
+</table>
     
 </body>
 <script src="js/script.js"></script>
