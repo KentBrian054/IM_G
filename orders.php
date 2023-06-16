@@ -14,6 +14,41 @@
         <input type="text" id="ItemQTY" name="ItemQTY" placeholder="Item Quantity"><br>
         <input type="submit" value="Save">
     </form>
+
+    <?php
+ // servername => localhost
+ // username => root
+ // password => empty
+ // database name => staff
+ //$conn = mysqli_connect("localhost", "root", "", "im_store");
+ include_once 'config.php';
+  
+ // Check connection
+ if($conn === false){
+     die("ERROR: Could not connect. "
+         . mysqli_connect_error());
+ }
+  //database
+ $sql = "SELECT * FROM product";
+ $result = $conn->query($sql);
+ 
+ if ($result->num_rows > 0) {
+   // output data of each row
+   echo "<table id='myTable' border=2>
+   <tr>
+   <td>Category Id</td>
+   <td>Category Description</td>
+   </tr>";
+   while($row = $result->fetch_assoc()) {
+     echo "<tr><td>" . $row["prod_id"]. "</td>
+     <td>" . $row["prod_name"]. "</td>
+     </tr>";
+   
+    }
+ } else {
+   echo "0 results";
+ }
+ $conn->close();
     
 </body>
 <script src="js/script.js"></script>

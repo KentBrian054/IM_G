@@ -13,6 +13,45 @@
         <input type="text" id="CategoryDesc" name="CategoryDesc" placeholder="Product Category Description"><br>
         <input type="submit" value="Save">
     </form>
+
+    <?php
+ // servername => localhost
+ // username => root
+ // password => empty
+ // database name => staff
+ //$conn = mysqli_connect("localhost", "root", "", "im_store");
+ include_once 'config.php';
+  
+ // Check connection
+ if($conn === false){
+     die("ERROR: Could not connect. "
+         . mysqli_connect_error());
+ }
+  //database
+ $sql = "SELECT * FROM category";
+ $result = $conn->query($sql);
+ 
+ if ($result->num_rows > 0) {
+   // output data of each row
+   echo "<table id='myTable' border=2>
+   <tr>
+   <td>Category Id</td>
+   <td>Category Description</td>
+   </tr>";
+   while($row = $result->fetch_assoc()) {
+     echo "<tr><td>" . $row["Cat_ID"]. "</td>
+     <td>" . $row["Cat_Desc"]. "</td>
+     </tr>";
+   
+    }
+ } else {
+   echo "<h1>No Categories Made</h1>";
+ }
+ $conn->close();
+
+
+?>
+</table>
     
 </body>
 <script src="js/script.js"></script>
