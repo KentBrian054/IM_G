@@ -7,16 +7,16 @@
    </head>
    <body>
    <div class="topnav">
-      <a class="active" href="#index.php">Sales</a>
-      <a href="product.php" class="op">Product</a>
+      <a class="op" href="index.php">Sales</a>
+      <a href="#product.php" class="active">Product</a>
       <a href="category.php" class="op">Category</a>
       <a href="transaction.php" class="op">Transactions</a>
       <a class="WebTitle">Scarlets Pet Shop Products</a>
     </div>
-
+<!-- 
 
     
-      <!-- <form action="insertrec.php" method="post">
+      <form action="insertrec.php" method="post">
         <input type="text" name="CatID" id="CatID" placeholder="Product Category ID" required>
         <input type="text" name="desc" id="desc" placeholder="Product Description" required>
         <?php
@@ -105,4 +105,3 @@
    </body>
    <script src="js/script.js"></script>
 </html>
-

@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="topnav">
+      <a class="op" href="index.php">Sales</a>
+      <a href="product.php" class="op">Product</a>
+      <a href="category.php" class="op">Category</a>
+      <a href="transaction.php" class="op">Transactions</a>
+      <a class="WebTitle">Scarlets Pet Shop Products</a>
+    </div>
     <form action="addorder.php" method="POST">
         <input type="text" id="ProdID" name="ProdID" placeholder="Product ID"><br>
         <input type="text" id="TranID"  name="TranID" placeholder="Transaction ID"><br>

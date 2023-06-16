@@ -11,16 +11,15 @@
 <div class="topnav">
       <a class="op" href="index.php">Sales</a>
       <a href="product.php" class="op">Product</a>
-      <a href="#category.php" class="active">Category</a>
-      <a href="transaction.php" class="op">Transactions</a>
+      <a href="category.php" class="op">Category</a>
+      <a href="#transaction.php" class="active">Transactions</a>
       <a class="WebTitle">Scarlets Pet Shop Products</a>
     </div>
-    <form action="addCat.php" method="POST">
-        <input type="text" id="CategoryID" name="CategoryID" placeholder="Product Category ID"><br>
-        <input type="text" id="CategoryDesc" name="CategoryDesc" placeholder="Product Category Description"><br>
-        <input type="submit" value="Save">
-    </form>
 
+    <div class="topnal">
+      <a class="tran1" href="#tranInfo.php">New Transaction</a>
+      <a href="orders.php" class="tran2">Add Orders</a>
+    </div>
     <?php
  // servername => localhost
  // username => root
@@ -35,26 +34,28 @@
          . mysqli_connect_error());
  }
   //database
- $sql = "SELECT * FROM category";
+ $sql = "SELECT * FROM product WHERE prod_id = 6";
  $result = $conn->query($sql);
+ 
  
  if ($result->num_rows > 0) {
    // output data of each row
    echo "<table id='myTable' border=2>
    <tr>
-   <td>Category Id</td>
-   <td>Category Description</td>
+   <td>Transaction Id</td>
+   <td>Product Id</td>
+   <td>Item Quantity</td>
    </tr>";
    while($row = $result->fetch_assoc()) {
-     echo "<tr><td>" . $row["Cat_ID"]. "</td>
-     <td>" . $row["Cat_Desc"]. "</td>
+     echo "<tr><td>" . $row["prod_id"]. "</td>
+     <td>" . $row["prod_id"]. "</td>
+     <td>" . $row["prod_name"]. "</td>
      </tr>";
    
     }
  } else {
-   echo "<h1>No Categories Made</h1>";
+   echo "No Records Made";
  }
- $conn->close();
 
 
 ?>
