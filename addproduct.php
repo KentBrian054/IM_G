@@ -19,8 +19,6 @@
 
     
       <form action="insertrec.php" method="post">
-        <input type="text" name="CatID" id="CatID" placeholder="Product Category ID" required>
-        <input type="text" name="desc" id="desc" placeholder="Product Description" required>
         <?php
  // servername => localhost
  // username => root
@@ -40,7 +38,7 @@
  
  if ($result->num_rows > 0) {
    // output data of each row
-   echo "<select name='CatID' id='CatID'>
+   echo "<select name='CatID' id='CatID' onchange='idnasab(this.value)'>
    <option hidden>Select Category</option>";
    while($row = $result->fetch_assoc()) {
      echo "<option value=".$row["Cat_Desc"]." class='choose'>".$row["Cat_ID"]."</option>";
@@ -51,8 +49,8 @@
 
 
 ?>
-        </select>
         <input type="text" name="pid" id="pid" placeholder="Product ID" required>
+        <label name="pid" id="pid" class="viewme">Product ID</label>
         <input type="text" name="pname" id="pname" placeholder="Product Name" required>
         <input type="text" name="price" id="price" placeholder="Product Price" required>
           
@@ -60,5 +58,5 @@
       </form>
          
    </body>
-   <script src="js/script.js"></script>
+   <script src="js/jsScript.js"></script>
 </html>

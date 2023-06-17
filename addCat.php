@@ -30,7 +30,7 @@
     } 
     // Close connection
     mysqli_close($conn);
-    header("Location: index.php");
+    header("Location: category.php");
     die();
     ?>
 </body>

@@ -57,7 +57,7 @@
         <input type="submit" value="Add Record">
         <input type="text" id="Search" onkeyup="(myFunction())" placeholder="Search for names.." title="Type in a name">
       </form> -->
-         
+      <input type="text" id="Search" onkeyup="(myFunction())" placeholder="Search for ID.." title="Type in a name">
  <?php
  // servername => localhost
  // username => root
@@ -99,6 +99,6 @@
 ?>
 </table>
    </body>
-   <script src="js/script.js"></script>
+   <script src="js/jsScript.js"></script>
 </html>
 

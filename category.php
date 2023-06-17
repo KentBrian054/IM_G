@@ -16,8 +16,8 @@
       <a class="WebTitle">Scarlets Pet Shop Products</a>
     </div>
     <form action="addCat.php" method="POST">
-        <input type="text" id="CategoryID" name="CategoryID" placeholder="Product Category ID"><br>
-        <input type="text" id="CategoryDesc" name="CategoryDesc" placeholder="Product Category Description"><br>
+        <input type="text" id="CategoryID" name="CategoryID" placeholder="Category ID"><br>
+        <input type="text" id="CategoryDesc" name="CategoryDesc" placeholder="Category Description"><br>
         <input type="submit" value="Save">
     </form>
 
