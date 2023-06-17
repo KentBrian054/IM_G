@@ -3,7 +3,7 @@
    <head>
       <title>Scarlets Pet Shop</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="css/1webStyle.css">
+      <link rel="stylesheet" href="css/tStyle.css">
    </head>
    <body>
    <div class="topnav">
@@ -83,16 +83,12 @@
    <td>Product Name</td>
    <td>Product Price</td>
    <td>Product Description</td>
-   <td>Action</td>
    </tr>";
    while($row = $result->fetch_assoc()) {
      echo "<tr><td>" . $row["prod_id"]. "</td>
      <td>" . $row["prod_name"]. "</td>
      <td> " . $row["prod_price"].  "</td>
-     <td>" . $row["prod_desc"] .   "</td>
-     <td><a href=deleterec.php?bid=".$row["prod_id"]." class='delete'>Delete </a>
-       <a href='editrec.php?bid=".$row["prod_id"]."&name=". $row["prod_name"]."&address=".$row["prod_price"]."&email=".$row["prod_desc"]. "' class='button'>Edit </a>    </td>
-     </tr>";
+     <td>" . $row["prod_desc"] .   "</td>";
    
     }
  } else {

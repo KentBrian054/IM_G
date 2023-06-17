@@ -13,9 +13,9 @@
       <a href="transaction.php" class="op">Transactions</a>
       <a class="WebTitle">Scarlets Pet Shop Products</a>
     </div>
+    <a class="lbutton" href="product.php">Products</a>
 
-    <a class="lbutton" href="addproduct.php">Add Product</a>
-<!-- 
+
 
     
       <form action="insertrec.php" method="post">
@@ -46,7 +46,7 @@
      echo "<option value=".$row["Cat_Desc"]." class='choose'>".$row["Cat_ID"]."</option>";
     }
  } else {
-   echo "0 results";
+   echo "<a class='lbutton' href='category.php'>Create a Category First</a>";
  }
 
 
@@ -57,53 +57,8 @@
         <input type="text" name="price" id="price" placeholder="Product Price" required>
           
         <input type="submit" value="Add Record">
-        <input type="text" id="Search" onkeyup="(myFunction())" placeholder="Search for names.." title="Type in a name">
-      </form> -->
+      </form>
          
- <?php
- // servername => localhost
- // username => root
- // password => empty
- // database name => staff
- //$conn = mysqli_connect("localhost", "root", "", "im_store");
- include_once 'config.php';
-  
- // Check connection
- if($conn === false){
-     die("ERROR: Could not connect. "
-         . mysqli_connect_error());
- }
-  //database
- $sql = "SELECT * FROM product";
- $result = $conn->query($sql);
- 
- if ($result->num_rows > 0) {
-   // output data of each row
-   echo "<table id='myTable' border=2>
-   <tr>
-   <td>Product Id</td>
-   <td>Product Name</td>
-   <td>Product Price</td>
-   <td>Product Description</td>
-   <td>Action</td>
-   </tr>";
-   while($row = $result->fetch_assoc()) {
-     echo "<tr><td>" . $row["prod_id"]. "</td>
-     <td>" . $row["prod_name"]. "</td>
-     <td> " . $row["prod_price"].  "</td>
-     <td>" . $row["prod_desc"] .   "</td>
-     <td><a href=deleterec.php?bid=".$row["prod_id"]." class='delete'>Delete </a>
-       <a href='editrec.php?bid=".$row["prod_id"]."&name=". $row["prod_name"]."&address=".$row["prod_price"]."&email=".$row["prod_desc"]. "' class='button'>Edit </a>    </td>
-     </tr>";
-   
-    }
- } else {
-   echo "No Records Made";
- }
-
-
-?>
-</table>
    </body>
    <script src="js/script.js"></script>
 </html>

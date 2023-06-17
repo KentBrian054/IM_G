@@ -64,6 +64,15 @@ table {
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
+.viewme {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
   /* Style the submit button */
   input[type=submit] {
     background-color: #04AA6D;
@@ -89,6 +98,15 @@ table {
 .topnal {
   background-color: #ff8cd3;
   overflow: hidden;
+}
+
+.lbutton {
+  align-items: center;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 /* Style the links inside the navigation bar */
