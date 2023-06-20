@@ -7,16 +7,18 @@
    </head>
    <body>
    <div class="topnav">
-      <a class="active" href="#index.php">Sales</a>
-      <a href="product.php" class="op">Product</a>
+      <a class="op" href="index.php">Sales</a>
+      <a href="#product.php" class="active">Product</a>
       <a href="category.php" class="op">Category</a>
       <a href="transaction.php" class="op">Transactions</a>
       <a class="WebTitle">Scarlets Pet Shop Products</a>
     </div>
 
+    <a class="lbutton" href="addproduct.php">Add Product</a>
+<!-- 
 
     
-      <!-- <form action="insertrec.php" method="post">
+      <form action="insertrec.php" method="post">
         <input type="text" name="CatID" id="CatID" placeholder="Product Category ID" required>
         <input type="text" name="desc" id="desc" placeholder="Product Description" required>
         <?php
@@ -57,7 +59,7 @@
         <input type="submit" value="Add Record">
         <input type="text" id="Search" onkeyup="(myFunction())" placeholder="Search for names.." title="Type in a name">
       </form> -->
-      <input type="text" id="Search" onkeyup="(myFunction())" placeholder="Search for ID.." title="Type in a name">
+         
  <?php
  // servername => localhost
  // username => root
@@ -83,12 +85,16 @@
    <td>Product Name</td>
    <td>Product Price</td>
    <td>Product Description</td>
+   <td>Action</td>
    </tr>";
    while($row = $result->fetch_assoc()) {
      echo "<tr><td>" . $row["Prod_ID"]. "</td>
      <td>" . $row["Prod_Name"]. "</td>
      <td> " . $row["Prod_Price"].  "</td>
-     <td>" . $row["Prod_Exp"] .   "</td>";
+     <td>" . $row["Prod_Desc"] .   "</td>
+     <td><a href=deleterec.php?bid=".$row["Prod_ID"]." class='delete'>Delete </a>
+       <a href='editrec.php?bid=".$row["Prod_ID"]."&name=". $row["Prod_Name"]."&address=".$row["Prod_Price"]."&email=".$row["Prod_Desc"]. "' class='button'>Edit </a>    </td>
+     </tr>";
    
     }
  } else {
@@ -99,6 +105,5 @@
 ?>
 </table>
    </body>
-   <script src="js/jsScript.js"></script>
+   <script src="js/script.js"></script>
 </html>
-
