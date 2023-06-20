@@ -53,7 +53,7 @@
         mysqli_close($conn);
        
        
-        header("Location: index.php");
+        header("Location: product.php");
         die();
         ?>
 </body>

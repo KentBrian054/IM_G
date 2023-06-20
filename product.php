@@ -92,7 +92,7 @@
      <td>" . $row["Prod_Name"]. "</td>
      <td> " . $row["Prod_Price"].  "</td>
      <td>" . $row["Prod_Desc"] .   "</td>
-     <td><a href=deleterec.php?bid=".$row["Prod_ID"]." class='delete'>Delete </a>
+     <td><a href=deleterec.php?Prod_ID=".$row["Prod_ID"]." class='delete'>Delete </a>
        <a href='editrec.php?bid=".$row["Prod_ID"]."&name=". $row["Prod_Name"]."&address=".$row["Prod_Price"]."&email=".$row["Prod_Desc"]. "' class='button'>Edit </a>    </td>
      </tr>";
    
@@ -105,5 +105,5 @@
 ?>
 </table>
    </body>
-   <script src="js/script.js"></script>
+   <script src="js/jsScript.js"></script>
 </html>
