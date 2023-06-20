@@ -69,4 +69,6 @@
  function idnasab(val) {
   alert("You pressed a key inside the input field");
   console.log("You pressed a key inside the input field");
+  document.getElementById("pid").innerHTML = val+1;
+  document.getElementById("pid").setAttribute('value',val + 1);
 }

@@ -19,6 +19,8 @@
 
     
       <form action="insertrec.php" method="post">
+      <input type="text" name="pid" id="pid" placeholder="Product ID" disabled>
+      <!-- <label name="pid" id="pid" class="viewme">Product ID</label> -->
         <?php
  // servername => localhost
  // username => root
@@ -41,7 +43,7 @@
    echo "<select name='CatID' id='CatID' onchange='idnasab(this.value)'>
    <option hidden>Select Category</option>";
    while($row = $result->fetch_assoc()) {
-     echo "<option value=".$row["Cat_Desc"]." class='choose'>".$row["Cat_ID"]."</option>";
+     echo "<option value=".$row["Cat_ID"]." class='choose'>".$row["Cat_Desc"]."</option>";
     }
  } else {
    echo "<a class='lbutton' href='category.php'>Create a Category First</a>";
@@ -49,10 +51,10 @@
 
 
 ?>
-        <input type="text" name="pid" id="pid" placeholder="Product ID" required>
-        <label name="pid" id="pid" class="viewme">Product ID</label>
+        
         <input type="text" name="pname" id="pname" placeholder="Product Name" required>
         <input type="text" name="price" id="price" placeholder="Product Price" required>
+        <input type="date" id="date" name="birthday">
           
         <input type="submit" value="Add Record">
       </form>
