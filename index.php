@@ -85,10 +85,10 @@
    <td>Product Description</td>
    </tr>";
    while($row = $result->fetch_assoc()) {
-     echo "<tr><td>" . $row["prod_id"]. "</td>
-     <td>" . $row["prod_name"]. "</td>
-     <td> " . $row["prod_price"].  "</td>
-     <td>" . $row["prod_desc"] .   "</td>";
+     echo "<tr><td>" . $row["Prod_ID"]. "</td>
+     <td>" . $row["Prod_Name"]. "</td>
+     <td> " . $row["Prod_Price"].  "</td>
+     <td>" . $row["Prod_Exp"] .   "</td>";
    
     }
  } else {

@@ -88,12 +88,12 @@
    <td>Action</td>
    </tr>";
    while($row = $result->fetch_assoc()) {
-     echo "<tr><td>" . $row["prod_id"]. "</td>
-     <td>" . $row["prod_name"]. "</td>
-     <td> " . $row["prod_price"].  "</td>
-     <td>" . $row["prod_desc"] .   "</td>
-     <td><a href=deleterec.php?bid=".$row["prod_id"]." class='delete'>Delete </a>
-       <a href='editrec.php?bid=".$row["prod_id"]."&name=". $row["prod_name"]."&address=".$row["prod_price"]."&email=".$row["prod_desc"]. "' class='button'>Edit </a>    </td>
+     echo "<tr><td>" . $row["Prod_ID"]. "</td>
+     <td>" . $row["Prod_Name"]. "</td>
+     <td> " . $row["Prod_Price"].  "</td>
+     <td>" . $row["Prod_Desc"] .   "</td>
+     <td><a href=deleterec.php?bid=".$row["Prod_ID"]." class='delete'>Delete </a>
+       <a href='editrec.php?bid=".$row["Prod_ID"]."&name=". $row["Prod_Name"]."&address=".$row["Prod_Price"]."&email=".$row["Prod_Desc"]. "' class='button'>Edit </a>    </td>
      </tr>";
    
     }

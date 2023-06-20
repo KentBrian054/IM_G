@@ -19,7 +19,8 @@
 
     
       <form action="insertrec.php" method="post">
-      <input type="text" name="pid" id="pid" placeholder="Product ID" disabled>
+      <input type="text" name="pid" id="pid" placeholder="Product ID">
+      <input type="text" name="pdesc" id="pdesc" placeholder="Product Description">
       <!-- <label name="pid" id="pid" class="viewme">Product ID</label> -->
         <?php
  // servername => localhost
@@ -54,7 +55,6 @@
         
         <input type="text" name="pname" id="pname" placeholder="Product Name" required>
         <input type="text" name="price" id="price" placeholder="Product Price" required>
-        <input type="date" id="date" name="birthday">
           
         <input type="submit" value="Add Record">
       </form>
