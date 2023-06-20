@@ -166,3 +166,9 @@ a.tran2 {
   font-size: 17px;
   margin-right: 30%;
 }
+
+a.tran1:hover, a.tran2:hover{
+  color:black;
+  background-color: yellow;
+}
+
