@@ -23,5 +23,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-header("Location:index.php");
+header("Location:product.php");
 ?>
