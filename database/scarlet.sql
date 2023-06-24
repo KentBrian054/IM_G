@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2023 at 04:28 AM
+-- Generation Time: Jun 24, 2023 at 12:09 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -53,7 +53,6 @@ CREATE TABLE `orders` (
 CREATE TABLE `product` (
   `Prod_ID` int(11) NOT NULL,
   `Prod_Name` text DEFAULT NULL,
-  `Prod_Desc` text DEFAULT NULL,
   `Prod_Price` int(11) DEFAULT NULL,
   `Prod_Exp` date NOT NULL,
   `Prod_CatID` int(11) NOT NULL
