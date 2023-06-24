@@ -14,7 +14,7 @@
       <a class="WebTitle">Scarlets Pet Shop Products</a>
     </div>
 
-    <a class="lbutton" href="addproduct.php">Add Product</a>
+    <a class="lbutton" href="addEP.php">With Existing Category</a><a class="lbutton" href="addNP.php">With Newly Added Category</a>
 <!-- 
 
     

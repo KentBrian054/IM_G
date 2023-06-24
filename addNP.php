@@ -18,7 +18,7 @@
 
 
     
-      <form action="insertrec.php" method="post">
+      <form action="addNPproduct.php" method="post">
       <!-- <label name="pid" id="pid" class="viewme">Product ID</label> -->
         <?php
  // servername => localhost
@@ -50,7 +50,7 @@
 
 
 ?>
-        <input type="text" name="pid" id="pid" placeholder="Product ID">
+        <input type="text" name="pid" id="pid" placeholder="Select a Category for Product ID">
         <input type="text" name="pname" id="pname" placeholder="Product Name" required>
         <input type="text" name="price" id="price" placeholder="Product Price" required>
           
@@ -58,5 +58,31 @@
       </form>
          
    </body>
-   <script src="js/jsScript.js"></script>
+   <script src="js/CatJS.js"></script>
+   <!-- <script>
+     function idnasab(val) {
+      console.log("You pressed a key inside the input field");
+      document.getElementById("pid").innerHTML = val + "<?php
+       include_once 'config.php';
+       $sql = "SELECT MAX(Prod_ID) AS Prod_ID FROM product WHERE Prod_ID LIKE '(val)%'";
+       $result = $conn->query($sql);
+  
+       // Check connection
+       if($conn === false){
+           die("ERROR: Could not connect. "
+               . mysqli_connect_error());
+       }
+       $sql = "SELECT COUNT(Prod_ID) FROM product";
+       $result = $conn->query($sql);
+       
+       if ($result->num_rows > 0) {
+         while($row = $result->fetch_assoc()) {
+           echo "".$row["0"]."";
+          }
+       } else {
+       }
+      ?>";
+      document.getElementById("pid").setAttribute('value',val + 1);
+    }
+   </script> -->
 </html>
