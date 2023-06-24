@@ -29,7 +29,6 @@
         // Taking all 5 values from the form data(input)
         $CatID =  $_REQUEST['CatID'];
         // $product_ID =  $_REQUEST['pid'];
-        $product_Description =  $_REQUEST['pdesc'];
         $product_Name =  $_REQUEST['pname'];
         $product_Price =  $_REQUEST['price'];
         // Performing insert query execution
@@ -55,7 +54,7 @@
         
 
         //database
-        $sql = "INSERT INTO product SELECT MAX(Prod_ID) + 1, '$product_Name','$product_Description', $product_Price, NOW(), $CatID FROM product WHERE Prod_ID LIKE '($CatID)%'";
+        $sql = "INSERT INTO product SELECT MAX(Prod_ID) + 1, '$product_Name', $product_Price, NOW(), $CatID FROM product WHERE Prod_ID LIKE '($CatID)%'";
          
         if(mysqli_query($conn, $sql)){
             echo "<h3>data stored in a database successfully."

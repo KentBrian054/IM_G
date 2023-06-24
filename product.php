@@ -84,16 +84,16 @@
    <td>Product Id</td>
    <td>Product Name</td>
    <td>Product Price</td>
-   <td>Product Description</td>
+   <td>Product Expiration</td>
    <td>Action</td>
    </tr>";
    while($row = $result->fetch_assoc()) {
      echo "<tr><td>" . $row["Prod_ID"]. "</td>
      <td>" . $row["Prod_Name"]. "</td>
      <td> " . $row["Prod_Price"].  "</td>
-     <td>" . $row["Prod_Desc"] .   "</td>
+     <td>" . $row["Prod_Exp"] .   "</td>
      <td><a href=deleterec.php?Prod_ID=".$row["Prod_ID"]." class='delete'>Delete </a>
-       <a href='editrec.php?bid=".$row["Prod_ID"]."&name=". $row["Prod_Name"]."&address=".$row["Prod_Price"]."&email=".$row["Prod_Desc"]. "' class='button'>Edit </a>    </td>
+       <a href='editrec.php?bid=".$row["Prod_ID"]."&name=". $row["Prod_Name"]."&address=".$row["Prod_Price"]."&email=".$row["Prod_Exp"]. "' class='button'>Edit </a>    </td>
      </tr>";
    
     }
