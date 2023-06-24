@@ -20,11 +20,11 @@
          <h1>Updating Data in Database</h1>
          <form action="saveupdaterec.php" method="post">
                <label for="Userid">Product ID:</label></td><td>
-               <label class="viewme" for="Userid"><?php echo $_REQUEST["bid"];  ?></label></td><td>
+               <label class="viewme" for="Userid"><?php echo $_REQUEST["Prod_ID"];  ?></label></td><td>
                <label for="dname">Product Name:</label></td><td>
-               <input type="text" name="pname" id="pname" placeholder="Product Name" value='<?php  echo $_REQUEST["name"];  ?>'>
+               <input type="text" name="pname" id="pname" placeholder="Product Name" value='<?php  echo $_REQUEST["Prod_Name"];  ?>'>
                <label for="email">Product Price:</label></td><td>
-               <input type="text" name="price" id="price" placeholder="Product Price" value=<?php echo $_REQUEST["address"];  ?>>
+               <input type="text" name="price" id="price" placeholder="Product Price" value=<?php echo $_REQUEST["Prod_Price"];  ?>>
                <label for="addres">Product Description:</label></td><td>
                <input type="text" name="desc" id="desc" placeholder="Product Description" value=<?php echo $_REQUEST["email"];  ?>>
             <input type="submit" value="Submit">

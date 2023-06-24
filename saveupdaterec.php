@@ -9,12 +9,11 @@
              . mysqli_connect_error());
      }
       
-     $bid =  $_REQUEST['pid'];
-     $bname = $_REQUEST['pname'];
-     $email = $_REQUEST['price'];
-     $address =  $_REQUEST['desc'];
+     $Prod_ID =  $_REQUEST['Prod_ID'];
+     $Prod_Name = $_REQUEST['Prod_Name'];
+     $Prod_Price = $_REQUEST['Prod_Price'];
 //database
-$sql = "UPDATE product SET prod_id=$bid, prod_name='$bname', prod_price='$email',prod_desc='$address'  WHERE prod_id=$bid";
+$sql = "UPDATE product SET Prod_ID=$Prod_ID, Prod_Name='$Prod_Name', Prod_Price=$Prod_Price  WHERE Prod_ID=$Prod_ID";
   
 if ($conn->query($sql) === TRUE) {
   echo "Record updated successfully";
