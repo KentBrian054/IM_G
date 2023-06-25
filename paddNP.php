@@ -34,7 +34,7 @@
    echo "<a class='lbutton' href='category.php'>Create a Category First</a>";
  }
 ?>
-        <input type="text" name="pid" id="pid" placeholder="Select a Category for Product ID">
+        <input type="text" name="pid" id="pid" placeholder="Select a Category for Product ID First" readonly>
         <input type="text" name="pname" id="pname" placeholder="Product Name" required>
         <input type="text" name="price" id="price" placeholder="Product Price" required>
           

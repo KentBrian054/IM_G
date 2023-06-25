@@ -20,24 +20,26 @@
      die("ERROR: Could not connect. "
          . mysqli_connect_error());
  }
- $sql = "SELECT * FROM product";
+ $sql = "SELECT c.Cat_ID, c.Cat_Desc, p.Prod_ID, p.Prod_Name, p.Prod_Price, p.Prod_Exp FROM product AS p JOIN category AS c ON c.Cat_ID = p.Prod_CatID";
  $result = $conn->query($sql);
  if ($result->num_rows > 0) {
-   echo "<table id='myTable' border=2>
+   echo "<table id='myTable' border = 2 >
    <tr>
+   <td>Category ID</td>
    <td>Product Id</td>
    <td>Product Name</td>
+   <td>Category Description</td>
    <td>Product Price</td>
    <td>Product Expiration</td>
    <td>Action</td>
    </tr>";
    while($row = $result->fetch_assoc()) {
-     echo "<tr><td>" . $row["Prod_ID"]. "</td>
-     <td>" . $row["Prod_Name"]. "</td>
+     echo "<tr><td>" . $row["Cat_ID"]. "</td><td>" . $row["Prod_ID"]. "</td>
+     <td>" . $row["Prod_Name"]. "</td><td>" . $row["Cat_Desc"]. "</td>
      <td> " . $row["Prod_Price"].  "</td>
      <td>" . $row["Prod_Exp"] .   "</td>
      <td><a href=deleterec.php?Prod_ID=".$row["Prod_ID"]." class='delete'>Delete </a>
-       <a href='editrec.php?bid=".$row["Prod_ID"]."&name=". $row["Prod_Name"]."&address=".$row["Prod_Price"]."&email=".$row["Prod_Exp"]. "' class='button'>Edit </a>    </td>
+       <a href='editrec.php?Prod_ID=".$row["Prod_ID"]."&Prod_Name=". $row["Prod_Name"]."&Prod_Price=".$row["Prod_Price"]."' class='button'>Edit </a>    </td>
      </tr>";
     }
  } else {
