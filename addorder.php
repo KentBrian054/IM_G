@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <?php
     //connects from index
     // servername => localhost
@@ -19,17 +11,17 @@
         die("ERROR: Could not connect. ". mysqli_connect_error());
     }
     // Taking all 5 values from the form data(input)
-    $TranID =  $_REQUEST['TranID'];
-    $ProdID = $_REQUEST['ProdID'];
-    $ProdQTY = $_REQUEST['ItemQTY'];
+    $TranID =  $_REQUEST['Tran_ID'];
+    $ProdID = $_REQUEST['Product_ID'];
+    $ProdQTY = $_REQUEST['Item_Quantity'];
     //database
     $UPsql = "INSERT INTO Transactions VALUES ($TranID, NOW()) WHERE NOT EXISTS (SELECT TranID FROM Transactions WHERE TranID=$TranID)";
     $sql = "INSERT INTO orders VALUES ($TranID, $ProdID, $ProdQTY)";
-    if(mysqli_query($conn, $UPsql)){
-        echo "<h3>data stored in a database successfully.". " Please browse your localhost php my admin". " to view the updated data</h3>";
-    } else{
-        echo "ERROR:  Sorry please try again$sql. ". mysqli_error($conn);
-    } 
+    // if(mysqli_query($conn, $UPsql)){
+    //     echo "<h3>data stored in a database successfully.". " Please browse your localhost php my admin". " to view the updated data</h3>";
+    // } else{
+    //     echo "ERROR:  Sorry please try again$sql. ". mysqli_error($conn);
+    // } 
     if(mysqli_query($conn, $sql)){
         echo "<h3>data stored in a database successfully.". " Please browse your localhost php my admin". " to view the updated data</h3>";
     } else{
@@ -40,5 +32,3 @@
     header("Location: index.php");
     die();
     ?>
-</body>
-</html>

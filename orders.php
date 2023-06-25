@@ -5,63 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/tStyle.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="topnav">
-      <a class="op" href="index.php">Sales</a>
       <a href="product.php" class="op">Product</a>
       <a href="category.php" class="op">Category</a>
-      <a href="transaction.php" class="op">Transactions</a>
+      <a href="index.php" class="op">Transactions</a>
       <a class="WebTitle">Scarlets Pet Shop Products</a>
     </div>
-    <form action="addorder.php" method="POST">
-        <input type="text" id="ProdID" name="ProdID" placeholder="Product ID"><br>
-        <input type="text" id="TranID"  name="TranID" placeholder="Transaction ID"><br>
-        <input type="text" id="ItemQTY" name="ItemQTY" placeholder="Item Quantity"><br>
-        <input type="submit" value="Save">
-    </form>
 
-    <?php
- // servername => localhost
- // username => root
- // password => empty
- // database name => staff
- //$conn = mysqli_connect("localhost", "root", "", "im_store");
+    <form action="orderAdd.php" method="post">
+        <?php
  include_once 'config.php';
-  
- // Check connection
  if($conn === false){
      die("ERROR: Could not connect. "
          . mysqli_connect_error());
  }
-  //database
- $sql = "SELECT * FROM product WHERE prod_id = 6";
+ $sql = "SELECT * FROM transactions";
  $result = $conn->query($sql);
  
- 
  if ($result->num_rows > 0) {
-   // output data of each row
-   echo "<table id='myTable' border=2>
-   <tr>
-   <td>Transaction Id</td>
-   <td>Product Id</td>
-   <td>Item Quantity</td>
-   </tr>";
+   echo "<select name='TranID' id='TranID' onchange='idnasab(this.value)'>
+   <option hidden>Select Transaction ID</option>";
    while($row = $result->fetch_assoc()) {
-     echo "<tr><td>" . $row["prod_id"]. "</td>
-     <td>" . $row["prod_id"]. "</td>
-     <td>" . $row["prod_name"]. "</td>
-     </tr>";
-   
+     echo "<option value=".$row["Tran_ID"]." class='choose'>".$row["Tran_ID"]."</option>";
     }
  } else {
-   echo "No Records Made";
+   echo "<a class='lbutton' href='category.php'>Create a Category First</a>";
  }
-
-
 ?>
-</table>
+        <input type="text" name="pid" id="pid" placeholder="Product ID" value="Select a Product" disabled>
+        <!-- <label>Product ID</label> -->
+        <?php
+ include_once 'config.php';
+ if($conn === false){
+     die("ERROR: Could not connect. "
+         . mysqli_connect_error());
+ }
+ $sql = "SELECT * FROM product";
+ $result = $conn->query($sql);
+ 
+ if ($result->num_rows > 0) {
+   echo "<select name='Product_ID' id='Product_ID'>
+   <option hidden>Product</option>";
+   while($row = $result->fetch_assoc()) {
+     echo "<option value=".$row["Prod_ID"]." class='choose'>".$row["Prod_Name"]."</option>";
+    }
+ } else {
+   echo "<a class='lbutton' href='product.php'>Add Products First</a>";
+ }
+?>
+        <input type="text" name="Item_Quantity" id="Item_Quantity" placeholder="Item Quantity" required>
+        
+          
+        <input type="submit" value="Add Order">
+      </form>
     
 </body>
 <script src="js/script.js"></script>

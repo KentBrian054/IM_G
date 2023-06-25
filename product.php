@@ -3,17 +3,21 @@
    <head>
       <title>Scarlets Pet Shop</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="css/tStyle.css">
+      <link rel="stylesheet" href="css/style.css">
    </head>
    <body>
    <div class="topnav">
-      <a class="op" href="index.php">Sales</a>
       <a href="#product.php" class="active">Product</a>
       <a href="category.php" class="op">Category</a>
-      <a href="transaction.php" class="op">Transactions</a>
+      <a href="index.php" class="op">Transactions</a>
       <a class="WebTitle">Scarlets Pet Shop Products</a>
     </div>
-    <a class="lbutton" href="paddEP.php">With Existing Category</a><a class="lbutton" href="paddNP.php">With Newly Added Category</a>    
+    
+    <div class="clickemC">
+  <div class="clickemV">
+   <a class="clickemA" href="paddEP.php">With Existing Category</a><a class="clickemB" href="paddNP.php">With Newly Added Category</a>
+  </div>
+</div>
  <?php
  include_once 'config.php';
  if($conn === false){
@@ -25,13 +29,13 @@
  if ($result->num_rows > 0) {
    echo "<table id='myTable' border = 2 >
    <tr>
-   <td>Category ID</td>
-   <td>Product Id</td>
-   <td>Product Name</td>
-   <td>Category Description</td>
-   <td>Product Price</td>
-   <td>Product Expiration</td>
-   <td>Action</td>
+   <td class='titlet'>Category ID</td>
+   <td class='titlet'>Product Id</td>
+   <td class='titlet'>Product Name</td>
+   <td class='titlet'>Category Description</td>
+   <td class='titlet'>Product Price</td>
+   <td class='titlet'>Product Expiration</td>
+   <td class='titlet'>Action</td>
    </tr>";
    while($row = $result->fetch_assoc()) {
      echo "<tr><td>" . $row["Cat_ID"]. "</td><td>" . $row["Prod_ID"]. "</td>
@@ -43,7 +47,22 @@
      </tr>";
     }
  } else {
-   echo "No Records Made";
+   echo "<table id='myTable' border = 2 >
+   <tr>
+   <td class='titlet'>Category ID</td>
+   <td class='titlet'>Product Id</td>
+   <td class='titlet'>Product Name</td>
+   <td class='titlet'>Category Description</td>
+   <td class='titlet'>Product Price</td>
+   <td class='titlet'>Product Expiration</td>
+   <td class='titlet'>Action</td>
+   </tr>
+   <tr><td>No Records Made</td><td>No Records Made</td>
+     <td>No Records Made</td><td>No Records Made</td>
+     <td>No Records Made</td>
+     <td>No Records Made</td>
+     <td>No Actions Available</td>
+     </tr>";
  }
 ?>
 </table>
