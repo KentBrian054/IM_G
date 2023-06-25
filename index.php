@@ -20,6 +20,7 @@
    <a class="clickemA" href="orders.php">Add Orders</a><a class="clickemB" href="tranID.php">New Transaction</a>
   </div>
 </div>
+<input type="text" id="Search" onkeyup="(myFunction())" placeholder="Search for ID.." title="Type in a name">
 
 <?php
  include_once 'config.php';

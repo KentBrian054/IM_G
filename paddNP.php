@@ -30,7 +30,11 @@
      echo "<option value=".$row["Cat_ID"]." class='choose'>".$row["Cat_Desc"]."</option>";
     }
  } else {
-   echo "<a class='lbutton' href='category.php'>Create a Category First</a>";
+  echo "<div class='clickemC'>
+  <div class='clickemV'>
+   <a class='clickemA' href='category.php'>Create a Category First</a>
+  </div>
+</div>";
  }
 ?>
         <input type="text" name="pid" id="pid" placeholder="Select a Category for Product ID First" readonly>

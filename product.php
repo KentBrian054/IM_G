@@ -18,6 +18,7 @@
    <a class="clickemA" href="paddEP.php">With Existing Category</a><a class="clickemB" href="paddNP.php">With Newly Added Category</a>
   </div>
 </div>
+<input type="text" id="Search" onkeyup="(myFunction())" placeholder="Search for ID.." title="Type in a name">
  <?php
  include_once 'config.php';
  if($conn === false){

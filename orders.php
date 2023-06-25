@@ -11,7 +11,7 @@
 <div class="topnav">
       <a href="product.php" class="op">Product</a>
       <a href="category.php" class="op">Category</a>
-      <a href="index.php" class="op">Transactions</a>
+      <a href="index.php" class="active">Transactions</a>
       <a class="WebTitle">Scarlets Pet Shop Products</a>
     </div>
 
@@ -32,7 +32,11 @@
      echo "<option value=".$row["Tran_ID"]." class='choose'>".$row["Tran_ID"]."</option>";
     }
  } else {
-   echo "<a class='lbutton' href='category.php'>Create a Category First</a>";
+   echo "<div class='clickemC'>
+  <div class='clickemV'>
+   <a class='clickemA' href='tranID.php'>Add a Transaction First</a>
+  </div>
+</div>";
  }
 ?>
         <input type="text" name="pid" id="pid" placeholder="Product ID" value="Select a Product" disabled>
@@ -53,7 +57,11 @@
      echo "<option value=".$row["Prod_ID"]." class='choose'>".$row["Prod_Name"]."</option>";
     }
  } else {
-   echo "<a class='lbutton' href='product.php'>Add Products First</a>";
+  echo "<div class='clickemC'>
+  <div class='clickemV'>
+   <a class='clickemA' href='product.php'>Add a Product First</a>
+  </div>
+</div>";
  }
 ?>
         <input type="text" name="Item_Quantity" id="Item_Quantity" placeholder="Item Quantity" required>
