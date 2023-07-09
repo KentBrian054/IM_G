@@ -43,7 +43,7 @@
      <td>" . $row["Prod_Name"]. "</td><td>" . $row["Cat_Desc"]. "</td>
      <td> " . $row["Prod_Price"].  "</td>
      <td>" . $row["Prod_Exp"] .   "</td>
-     <td><!--<a href=deleterec.php?Prod_ID=".$row["Prod_ID"]." class='delete'>Delete </a>-->
+     <td><a href=deleterec.php?Prod_ID=".$row["Prod_ID"]." class='delete'>Delete </a>
        <a href='editrec.php?Prod_ID=".$row["Prod_ID"]."&Prod_Name=". $row["Prod_Name"]."&Prod_Price=".$row["Prod_Price"]."' class='button'>Edit </a>    </td>
      </tr>";
     }

@@ -40,7 +40,7 @@
         <input type="text" name="pid" id="pid" placeholder="Select a Category for Product ID First" readonly>
         <input type="text" name="pname" id="pname" placeholder="Product Name" required>
         <input type="text" name="price" id="price" placeholder="Product Price" required>
-        <input type="date" id="Prod_Exp" name="Prod_Exp">
+        <input type="date" id="Prod_Exp" name="Prod_Exp" min="0000-00-00">
           
         <input type="submit" value="Add Record">
       </form>  

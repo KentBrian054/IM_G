@@ -31,14 +31,13 @@
         $product_ID =  $_REQUEST['pid'];
         $product_Name =  $_REQUEST['pname'];
         $product_Price =  $_REQUEST['price'];
-        $product_Date =  $_REQUEST['Prod_Exp'];
         // Performing insert query execution
         // here our table name is college
         $coun = 0;
 
 
-        // $sqlcount = "SELECT MAX(Prod_ID) FROM product WHERE Prod_ID LIKE '($CatID)%'";
-        // $resultcount = $conn->query($sqlcount);
+        $sqlcount = "SELECT MAX(Prod_ID) FROM product WHERE Prod_ID LIKE '($CatID)%'";
+        $resultcount = $conn->query($sqlcount);
 
         // while ($row = $resultcount->fetch_assoc()) {
         //     $coun = $coun + 1;
@@ -58,7 +57,7 @@
         // $sql = "INSERT INTO product VALUES ($product_ID, '$product_Name', $product_Price, NOW(), $CatID)";
 
         // $sql = "INSERT INTO product VALUES ($product_ID, '$product_Name', $product_Price, NOW(), $CatID) ON DUPLICATE KEY UPDATE Prod_ID = $product_ID";
-        // $sqladdnew = "INSERT INTO product SELECT MAX(Prod_ID) + 1, '$product_Name', $product_Price, NOW(), $CatID FROM product WHERE Prod_ID LIKE '($CatID)%'";
+        $sqladdnew = "INSERT INTO product SELECT MAX(Prod_ID) + 1, '$product_Name', $product_Price, NOW(), $CatID FROM product WHERE Prod_ID LIKE '($CatID)%'";
         $sqlcomp = "SELECT MAX(Prod_ID) + 1 as Prod_ID FROM product WHERE Prod_ID LIKE '$CatID%'";
         $resulta = $conn->query($sqlcomp);
 
@@ -68,7 +67,7 @@
             echo "".$row["Prod_ID"]."";
 
             $res = intval($row["Prod_ID"]);
-              $sql = "INSERT INTO product VALUES ($product_ID, '$product_Name', $product_Price, $product_Date, $CatID)";
+              $sql = "INSERT INTO product VALUES ($product_ID, '$product_Name', $product_Price, NOW(), $CatID)";
 
              
               if(mysqli_query($conn, $sql)){
