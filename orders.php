@@ -39,7 +39,7 @@
 </div>";
  }
 ?>
-        <input type="text" name="pid" id="pid" placeholder="Product ID" value="Select a Product" disabled>
+        <input type="text" name="pid" id="null" placeholder="  " value="  " disabled>
         <!-- <label>Product ID</label> -->
         <?php
  include_once 'config.php';
